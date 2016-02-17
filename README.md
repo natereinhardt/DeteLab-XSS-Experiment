@@ -1,1 +1,1 @@
-# DeteLab-XSS-Experiment
+# DeterLab-XSS-Experiment
