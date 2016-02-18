@@ -1,3 +1,7 @@
-/**
- * Created by natem on 02/16/2016.
- */
+var mongoose = require('mongoose');
+
+module.exports = mongoose.model('comment', {
+    message: String,
+    user: String
+
+});

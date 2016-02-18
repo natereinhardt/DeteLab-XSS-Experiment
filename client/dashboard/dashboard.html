@@ -1,30 +1,23 @@
-<!-- Page Content -->
 <div class="container" ng-controller="dashboardCtrl as vm">
-    <div id="veil" ng-show="vm.loading"></div>
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
             <div ng-if="vm.success == true">
-                <p>Repository at <a href="{{vm.addedRepo}}" target="_blank">{{vm.addedRepo}}</a> is now being analyzed and monitored...</p>
+                <p>Repository at <a href="{{vm.addedComment}}" target="_blank">{{vm.addedComment}}</a> is now being analyzed and monitored...</p>
             </div>
-            <form name="addRepo">
+            <form name="addComment">
                 <div class="form-group">
-                    <label class="control-label" for="repoUrl">Repository:</label>
+                    <label class="control-label" for="comment">Comment:</label>
                     <input  type="text"
-                            ng-model="vm.repoUrl" required
-                            pattern="^https?://.+\.git$"
-                            id="repoUrl"
+                            ng-model="vm.comment" required
+                            id="comment"
                             class="form-control"
-                            placeholder="https://github.com/example/repository.git"/>
+                            placeholder="Type Your Comment Here"/>
                 </div>
-                <button ng-disabled="addRepo.$invalid" ng-click ="vm.addRepository(vm.repoUrl)" class="btn btn-primary">Add Repository</button>
+                <button ng-disabled="addComment.$invalid" ng-click ="vm.addComment(vm.comment)" class="btn btn-primary6">Add Comment</button>
             </form>
-            <div id="loadingDashbaord" ng-show="vm.loading">
-                <img src = "/images/fireBallGif.gif">
-                Check'n Out...
-            </div>
-            <label class="control-label" for="repoUrl">Database:</label>
-            <div ng-repeat="repo in vm.repos">
-                <li>{{repo.URL}}</li>
+            <label class="control-label" for="comment">Database:</label>
+            <div ng-repeat="comment in vm.comments">
+                <li>{{comment.message}}</li>
             </div>
         </div>
     </div>
