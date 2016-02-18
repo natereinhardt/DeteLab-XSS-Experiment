@@ -1,12 +1,12 @@
 var Comment = require('./comment');
 
 
-module.exports.create = function (newComment, res) {
+module.exports.create = function (req, res) {
+   var newComment = req.params.comment;
     var comment = new Comment();
-    newComment.message = comment.message;
-    newComment.user = comment.user;
+    comment.message = newComment;
 
-    repo.save(function (err, result) {
+    comment.save(function (err, result) {
         res.json(result);
     });
 };

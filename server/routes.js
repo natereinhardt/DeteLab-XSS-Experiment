@@ -1,11 +1,10 @@
 var commentCtrl = require('./comment/commentCtrl');
 
-
 module.exports = function(app) {
 
 // =============================Server Routes ===========================================================
     //Repo Api Endpoints
-    app.get('/api/comment', commentCtrl.list);
+    app.get('/api/comment/list', commentCtrl.list);
     app.post('/api/comment/:comment', commentCtrl.create);
 
 //============================= Frontend Routes =========================================================

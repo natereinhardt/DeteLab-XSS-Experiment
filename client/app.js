@@ -4,6 +4,7 @@
     var app = angular.module('XssSim', [
         'ngRoute',
         'ngResource',
+        'ngSanitize',
         'XssSim.dashboardCtrl'
     ]);
 //==================================Route Provider==============================================================
